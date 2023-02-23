@@ -5,6 +5,10 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+router.post('/new', (req, res) => {
+  res.redirect('/places')
+})
+
 //places locations are temp filler
 
 router.get('/', (req, res) => {
