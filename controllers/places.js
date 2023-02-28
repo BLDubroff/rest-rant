@@ -9,9 +9,8 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+//POST
 router.post('/', (req, res) => {
-  console.log(req.body)
-  router.post('/', (req, res) => {
     console.log(req.body)
     if (!req.body.pic) {
       // Default image if one is not provided
@@ -23,11 +22,10 @@ router.post('/', (req, res) => {
     if (!req.body.state) {
       req.body.state = 'USA'
     }
-    res.send('POST /places')
-  })
-  places.push(req.body)
-  res.redirect('/places')
+    places.push(req.body)
+    res.redirect('/places')
 })
+
 
 // SHOW
 router.get('/:id', (req, res) => {
@@ -67,6 +65,7 @@ router.put('/:id', (req, res) => {
       res.redirect(`/places/${id}`)
   }
 })
+
 // DELETE
 router.delete('/:id', (req, res) => {
   let id = Number(req.params.id)
