@@ -52,3 +52,8 @@ nav a:hover {
     text-decoration: none;
 }
 /* end of nav css */
+
+img {
+    height: 500px;
+    width: 500px;
+}
