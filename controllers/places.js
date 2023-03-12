@@ -72,6 +72,13 @@ router.get('/:id/comment', (req, res) => {
 
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
+  req.body.stars = Number(req.body.stars)
+  if (req.body.rant == 'on'){
+    req.body.rant = true
+  }
+  else {
+    req.body.rant = false
+  }
   db.Place.findById(req.params.id)
   .then(place => {
       db.Comment.create(req.body)
